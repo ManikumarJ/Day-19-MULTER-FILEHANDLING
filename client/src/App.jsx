@@ -18,7 +18,7 @@ const App = () => {
     fromData.append("name",name);
     fromData.append("image",fileName)
 
-    const adding = await axios.post("http://localhost:5000/api/crud/uploaddata",fromData,{
+    const adding = await axios.post("http://localhost:5000/api/img/uploadImg",fromData,{
           headers: {
             "Content-Type": "multipart/form-data"
           }
@@ -38,7 +38,7 @@ const App = () => {
  }
  
  const fetchdatas = async()=>{
-  const get = await axios.get("http://localhost:5000/api/crud/getdataforimage")
+  const get = await axios.get("http://localhost:5000/api/img/getImageData")
   console.log(get);
   setUserData(get.data.datasend)
  }
